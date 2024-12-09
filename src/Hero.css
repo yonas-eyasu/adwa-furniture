@@ -1,0 +1,42 @@
+/* General styling for the Hero section */
+.hero {
+  display: flex; /* Flexbox to center content */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  height: 100vh; /* Full viewport height */
+  background-size: cover; /* Ensure the background image covers the entire container */
+  background-position: center; /* Center the background image */
+  color: white; /* Make sure text is white for visibility */
+ }
+
+.bgcolor{
+  background-color: #3a19b2 ;
+  opacity: 0.5;
+  background-position: 400vh;
+  width: 100%;
+
+}
+/* Additional styling for the text container */
+.texts {
+  text-align: center; /* Center text inside the .texts div */
+}
+
+.texts h1 {
+  font-size: 3rem; /* Adjust the font size */
+  margin-bottom: 20px; /* Add space between the title and the description */
+}
+
+.texts p {
+  font-size: 1.5rem; /* Adjust the font size */
+}
+.img{
+  width: 40px;
+  animation: shakeY 10s ease infinite;
+  
+}
+.arrow{
+  display: flex;
+  justify-content: center;
+ margin-top: 30px;
+ filter: brightness(0) saturate(100%) invert(83%) sepia(41%) saturate(3998%) hue-rotate(119deg) brightness(118%) contrast(91%);
+}

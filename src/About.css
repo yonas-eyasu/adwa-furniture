@@ -1,0 +1,47 @@
+.about-section{
+  margin-top: 200vh;
+}
+.about-section {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-content {
+  display: block;
+  margin: 20px;
+  margin-bottom: 30px;
+  flex: 1 1 45%; 
+  min-width: 280px; 
+}
+
+.about-image {
+  width: 40px;
+  margin-bottom: 5px; 
+  filter: brightness(0) saturate(100%) invert(83%) sepia(41%) saturate(3998%) hue-rotate(119deg) brightness(118%) contrast(91%);
+}
+
+.about-text h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;  /* Switch to 1 column */
+  }
+
+  .about-content {
+    flex: 1 1 100%; /* Make each item take full width on small screens */
+  }
+
+  .about-image {
+    margin: 0 auto; /* Center images on small screens */
+  }
+}

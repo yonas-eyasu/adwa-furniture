@@ -1,0 +1,151 @@
+/* Centering text and other content */
+.text {
+  text-align: center;
+}
+
+.content-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center;
+      /* Centers content horizontally */
+}
+.content-center  p{
+  font-size: 20px;
+}
+.content-center h2{
+  font-size: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* Category links animation */
+.category-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;  /* Increased the spacing between the links */
+  margin-top: 45px;
+}
+
+/* Adding animation for the links */
+.category-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 5px;
+  opacity: 0; /* Start with invisible links */
+  transform: translateY(-20px); /* Start with more distance upwards */
+  animation: fadeInLinks 1.5s ease-out forwards; /* Slow down the animation */
+  animation-delay: 0.3s; /* Slight delay for smoother appearance */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for links */
+.category-links a:hover {
+  color: #007bff;  /* Change color on hover */
+  transform: scale(1.1); /* Slight zoom on hover */
+  letter-spacing: 1px; /* Slight spacing effect on hover */
+  transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.2s ease;
+}
+
+/* Fade-in effect for the links */
+@keyframes fadeInLinks {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Start with more distance above */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at its original position */
+  }
+}
+
+/* Styling for the images in furniture */
+.album {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;  /* Adjust the space between the image rows */
+  justify-content: center;  /* Center align the images */
+}
+
+.furniture {
+  display: flex;
+  gap: 30px; /* Increased the gap between images */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  min-width: 300px;
+  /* Each 'furniture' div will take at least 300px */
+}
+
+img {
+  padding-top: 20px;
+}
+
+/* Image styling and animation */
+.furniture-image {
+  width: 100%;  /* Allow images to scale with the container width */
+  max-width: 450px;  /* Limit maximum size for each image */
+  height: auto;
+  object-fit: cover;  /* Ensures images maintain their aspect ratio */
+  opacity: 0; /* Start with invisible images */
+  transform: scale(0.85); /* Start with a bit smaller images */
+  animation: fadeInImages 1.8s ease-out forwards; /* Slow down the fade-in effect */
+  transition: transform 0.4s ease;  /* Smooth scaling effect on hover */
+}
+
+/* Hover effect for images */
+.furniture-image:hover {
+  transform: scale(1.1);  /* Slightly enlarge the image on hover */
+  transition: transform 0.4s ease;
+}
+
+/* Fade-in effect for images */
+@keyframes fadeInImages {
+  from {
+    opacity: 0;
+    transform: scale(0.85); /* Start slightly smaller for a cool "grow" effect */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* End at normal size */
+  }
+}
+
+/* Example for the .all container */
+.all {
+  padding: 20px;
+}
+
+/* Ensure images wrap correctly in smaller screens */
+@media (max-width: 768px) {
+  .furniture-image {
+    max-width: 100%;  /* Images will scale to the full width of the container on smaller screens */
+  }
+
+  .furniture {
+    justify-content: flex-start;  /* Align images to the start on smaller screens */
+  }
+}
+
+.detail {
+  position: absolute;  /* Position absolutely inside the image container */
+  bottom: 0;  /* Position at the bottom of the image */
+  left: 50%;  /* Center the div horizontally */
+  transform: translateX(-50%);  /* Center the div exactly */
+  background-color: rgba(0, 255, 255, 0.7);  /* Semi-transparent aqua background */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);  /* Optional shadow for better contrast */
+  width: 100%;  /* Make the width match the image container */
+  max-width: 270px;  /* Optional: Set a max width */
+  padding: 10px;
+  height: 50px;  /* Adjust height for the content */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Center the content inside .detail */
+  opacity: 0;  /* Make it hidden by default */
+  transition: opacity 0.3s ease;  /* Fade-in effect */
+}
+
+/* Hover effect for .detail (if needed) */
+.furniture-image:hover + .detail {
+  opacity: 1;  /* Make the detail div fully visible on image hover */
+}
